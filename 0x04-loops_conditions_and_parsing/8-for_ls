@@ -1,7 +1,12 @@
-#!/usr/bin/env bash
-# This script lists non-hidden files, showing only the part after the first dash
+#!/bin/bash
 
 for file in *; do
-  name="${file#*-}"
-  echo "$name"
+  # skip if it is a hidden file (already filtered by *), but double check if needed:
+  [[ "$file" == .* ]] && continue
+  
+  # check if file contains a dash
+  if [[ "$file" == *-* ]]; then
+    # extract part after first dash
+    echo "${file#*-}"
+  fi
 done
