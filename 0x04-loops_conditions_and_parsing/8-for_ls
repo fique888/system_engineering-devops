@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 #
 for file in *; do
-  [[ "$file" == .* ]] && continue  # skip hidden files
+  # Skip hidden files and non-regular files (like directories, symlinks, etc.)
+  [[ "$file" == .* ]] && continue
+  [ -f "$file" ] || continue
+
+  # Check if file name contains a dash
   if [[ "$file" == *-* ]]; then
     echo "${file#*-}"
   fi
