@@ -1,5 +1,2 @@
 #!/bin/bash
-# Get the current user
-current_user=$(whoami)
-# Print greeting
-echo "Hello, $current_user!"
+echo "Hello, $(whoami)!"
