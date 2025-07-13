@@ -1,11 +1,8 @@
 #!/usr/bin/env bash
 #
 for file in *; do
-  # Skip hidden files (should be none because * doesn't match dotfiles)
   [[ "$file" == .* ]] && continue
-  # Check if file name contains a dash
   if [[ "$file" == *-* ]]; then
-    # Print part after first dash
     echo "${file#*-}"
   fi
 done
