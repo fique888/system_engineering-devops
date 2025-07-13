@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
 for file in *; do
-  [[ "$file" == .* ]] && continue
+  [[ "$file" == .* ]] && continue  # skip hidden files
   if [[ "$file" == *-* ]]; then
     echo "${file#*-}"
   fi
