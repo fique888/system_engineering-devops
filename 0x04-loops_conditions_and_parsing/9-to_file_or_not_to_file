@@ -1,4 +1,5 @@
 #!/bin/bash
+# This script provides information about the file named "school"
 
 # Check if the file "school" exists
 if [ -e "school" ]; then
