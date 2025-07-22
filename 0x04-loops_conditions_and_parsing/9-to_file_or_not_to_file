@@ -7,11 +7,13 @@ if [ -e "school" ]; then
 
     # Check if it's a regular file
     if [ -f "school" ]; then
+        echo "school is a regular file"
+
         # Check if the file is empty
-        if [ ! -s "school" ]; then
-            echo "school file is empty"
-        else
+        if [ -s "school" ]; then
             echo "school file is not empty"
+        else
+            echo "school file is empty"
         fi
     else
         echo "school is not a regular file"
