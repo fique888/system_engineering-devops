@@ -4,11 +4,7 @@
 
 pids=$(pgrep -f 4-to_infinity_and_beyond)
 
-if [ -z "$pids" ]; then
-  echo "No process named 4-to_infinity_and_beyond found."
-else
-  echo "Killing process(es) with PID(s): $pids"
-  # Use an array to safely iterate over each PID
+if [ -n "$pids" ]; then
   read -r -a pid_array <<< "$pids"
   for pid in "${pid_array[@]}"; do
     kill "$pid"
