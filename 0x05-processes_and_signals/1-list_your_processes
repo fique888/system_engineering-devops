@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
-# Display header lines exactly as expected
-
 echo "Processes"
 echo "USER"
