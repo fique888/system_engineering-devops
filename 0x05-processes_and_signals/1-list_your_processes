@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
-# This script displays only usernames of all running processes
+# Display all running processes with full info and hierarchy
 
-ps -eo user= | sort -u
+echo "Processes with details (user, PID, CPU%, MEM%, command):"
+ps -eo user,pid,ppid,%cpu,%mem,tty,cmd --forest --sort=pid
+
+echo
+echo "Process hierarchy tree (user, pid, cmd):"
+pstree -aup
