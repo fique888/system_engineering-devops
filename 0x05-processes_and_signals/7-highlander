@@ -3,6 +3,7 @@
 
 term_handler() {
   echo "I am invincible!!!"
+  return 0
 }
 
 trap term_handler SIGTERM
