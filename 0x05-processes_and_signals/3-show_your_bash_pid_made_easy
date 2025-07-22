@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#
+# shellcheck disable=SC2009
+
+pgrep -a bash | while read -r pid cmd; do
+  # Extract only the basename of the command (process name)
+  proc_name=$(basename "$cmd")
+  echo "$pid $proc_name"
+done
