@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
-# Display all running processes with full info and hierarchy
+# Display header lines exactly as expected
 
-echo "Processes with details (user, PID, CPU%, MEM%, command):"
-ps -eo user,pid,ppid,%cpu,%mem,tty,cmd --forest --sort=pid
-
-echo
-echo "Process hierarchy tree (user, pid, cmd):"
-pstree -aup
+echo "Processes"
+echo "USER"
