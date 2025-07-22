@@ -2,12 +2,15 @@
 #
 # shellcheck disable=SC2009
 
-# Find the PID(s) of the process named 4-to_infinity_and_beyond and kill them
 pids=$(pgrep -f 4-to_infinity_and_beyond)
 
 if [ -z "$pids" ]; then
   echo "No process named 4-to_infinity_and_beyond found."
 else
   echo "Killing process(es) with PID(s): $pids"
-  kill $pids
+  # Use an array to safely iterate over each PID
+  read -r -a pid_array <<< "$pids"
+  for pid in "${pid_array[@]}"; do
+    kill "$pid"
+  done
 fi
