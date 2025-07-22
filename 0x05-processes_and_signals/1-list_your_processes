@@ -1,14 +1,4 @@
 #!/usr/bin/env bash
-# This script displays a list of currently running processes:
-# - All users
-# - Including processes without a TTY
-# - In a user-oriented, readable format
-# - With a visible process hierarchy
+# This script displays the list of users running processes
 
-# Use ps to show all processes in user-oriented format
-ps -eo user,pid,ppid,%cpu,%mem,tty,stat,cmd --sort=ppid
-
-echo
-echo "==== Process Hierarchy ===="
-# Show process hierarchy in tree format with PIDs and users
-pstree -aup
+ps -eo user --no-headers | sort | uniq
